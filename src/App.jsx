@@ -1,4 +1,4 @@
-import React,{ useState } from 'react'
+import React,{ useEffect, useState } from 'react'
 import './App.css'
 import ErrorBoundary from './errorBoundary';
 
@@ -71,6 +71,14 @@ function Card1() {
     c3 = Math.floor(Math.random()*255);
     setColor(`rgb(${c1},${c2},${c3})`);
   }
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      changer();
+    },10000)
+
+    return () => clearInterval(interval);
+  },[])
 
   return (
     <div className='card' onClick={changer} style={{backgroundColor: color}}></div>
