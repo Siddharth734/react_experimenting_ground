@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(238, 238, 238);
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(26, 26, 26);
+}
+
+@mixin squircle-radius($rad: 0.5rem){
+    corner-shape: squircle;
+    border-radius: $rad;
+}
+
+#root{
+    height: 100%;
+    width: 100%;
+
+    main{
+        height: 100%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+        text-align: center;
+
+        .addtodo{
+
+            input{
+                background-color: rgb(49, 49, 49);
+                padding: 0.7rem;
+                border: none;
+                @include squircle-radius();
+                margin-right: 1rem;
+            }
+
+            button{
+                background-color: rgb(21, 177, 164);
+                padding: 0.5rem;
+                border: none;
+                @include squircle-radius();
+                transition: all 0.1s ease-in-out;
+            }
+            button:active{
+                background-color: rgb(14, 215, 198);
+                scale: 0.95;
+            }
+        }
+
+        .todoscontainer{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+
+            .todo{
+                padding: 0.7rem;
+                border: 2px solid grey;
+                background-color: rgb(49, 49, 49);
+                @include squircle-radius(1rem);
+                width: 30%;
+                cursor: pointer;
+                transition: all 0.2s ease-in-out;
+            }
+            .todo:active{
+                transform: scale(0.95);
+            }
+    
+            .todo.done{
+                border-color: rgb(151, 255, 113);
+                background: linear-gradient(to left,lime, rgb(57, 194, 23), lime);
+            }
+        }
+    
+        .card{
+            height: 20rem;
+            padding: 2rem;
+            border: 2px solid grey;
+            @include squircle-radius(2rem);
+            width: 30%;
+            cursor: pointer;
+        }
+        .card.error{
+            border-color: rgb(216, 0, 0);
+            background-color: rgb(49, 49, 49);
+            color: rgb(216, 0, 0);
+        }
+    }
+}
