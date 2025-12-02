@@ -1,4 +1,4 @@
-import React,{ useEffect, useState } from 'react'
+import React,{ useEffect, useRef, useState } from 'react'
 import './App.css'
 import ErrorBoundary from './errorBoundary';
 
@@ -27,8 +27,8 @@ function App() {
       done: true
     }
   ]);
-
   const [inputval, setInputval] = useState("");
+  let inputRef = useRef(null);
 
   function addTodo() {
     if(inputval===""){
@@ -39,16 +39,29 @@ function App() {
     setTodos([...todos,{
       title: inputval,
       done: false
-    }])
+    }]);
+    setInputval("");
   }
+
+  function FocusInput(params) {
+    inputRef.current.focus();
+    addTodo();
+  }
+
+  useEffect(() => {
+
+    window.addEventListener('keydown', () => {
+      inputRef.current.focus();
+    });
+  },[])
 
   return (
     <>
       <main>
         <h1>TODOS</h1>
         <div className='addtodo'>
-          <input type="text" placeholder="new todo" value={inputval} onChange={(e) => setInputval(e.target.value)}/>
-          <button onClick={addTodo}>Add todo</button>
+          <input type="text" ref={inputRef} placeholder="new todo" value={inputval} onChange={(e) => setInputval(e.target.value)} onKeyDown={(e) => {e.key === "Enter"?addTodo():""}}/>
+          <button onClick={FocusInput}>Add todo</button>
         </div>
         <div className='todoscontainer'>
           {todos.map((todo,i) => <TODO key={i} title={todo.title} done={todo.done}></TODO>)}
