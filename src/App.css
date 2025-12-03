@@ -12,10 +12,9 @@ html, body {
 }
 
 #root {
-  height: 100%;
   width: 100%;
 }
-#root main {
+#root .todosection {
   height: 100%;
   padding: 2rem;
   display: flex;
@@ -24,7 +23,7 @@ html, body {
   gap: 4rem;
   text-align: center;
 }
-#root main .addtodo input {
+#root .todosection .addtodo input {
   background-color: rgb(49, 49, 49);
   padding: 0.7rem;
   border: none;
@@ -32,7 +31,7 @@ html, body {
   border-radius: 0.5rem;
   margin-right: 1rem;
 }
-#root main .addtodo button {
+#root .todosection .addtodo button {
   background-color: rgb(21, 177, 164);
   padding: 0.5rem;
   border: none;
@@ -40,18 +39,18 @@ html, body {
   border-radius: 0.5rem;
   transition: all 0.1s ease-in-out;
 }
-#root main .addtodo button:active {
+#root .todosection .addtodo button:active {
   background-color: rgb(14, 215, 198);
   scale: 0.95;
 }
-#root main .todoscontainer {
+#root .todosection .todoscontainer {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
 }
-#root main .todoscontainer .todo {
+#root .todosection .todoscontainer .todo {
   padding: 0.7rem;
   border: 2px solid grey;
   background-color: rgb(49, 49, 49);
@@ -61,14 +60,19 @@ html, body {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-#root main .todoscontainer .todo:active {
+#root .todosection .todoscontainer .todo:active {
   transform: scale(0.95);
 }
-#root main .todoscontainer .todo.done {
+#root .todosection .todoscontainer .todo.done {
   border-color: rgb(151, 255, 113);
   background: linear-gradient(to left, lime, rgb(57, 194, 23), lime);
 }
-#root main .card {
+#root .colorsection {
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
+}
+#root .colorsection .card {
   height: 20rem;
   padding: 2rem;
   border: 2px solid grey;
@@ -77,8 +81,57 @@ html, body {
   width: 30%;
   cursor: pointer;
 }
-#root main .card.error {
+#root .colorsection .card.error {
   border-color: rgb(216, 0, 0);
   background-color: rgb(49, 49, 49);
   color: rgb(216, 0, 0);
+}
+#root .stopwatchsection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 5rem;
+}
+#root .stopwatchsection .stopwatch {
+  padding: 0.1rem;
+  width: 100px;
+  border: 0.1rem solid rgb(76, 76, 76);
+  corner-shape: squircle;
+  border-radius: 5rem;
+  text-align: center;
+  overflow: hidden;
+}
+#root .stopwatchsection .stopwatch button {
+  width: 50%;
+  background-color: rgb(49, 49, 49);
+  border: 0.1rem solid rgb(76, 76, 76);
+  padding: 0.3rem;
+  corner-shape: squircle;
+  border-radius: 1rem;
+}
+#root .stopwatchsection .stopwatch .reset {
+  width: 100%;
+  padding: 0.5;
+  border: none;
+}
+#root .stopwatchsection .stopwatch .start:active {
+  scale: 0.95;
+  border-color: rgb(255, 220, 82);
+}
+#root .stopwatchsection .stopwatch .stop:active {
+  scale: 0.95;
+  border-color: rgb(255, 78, 78);
+}
+#root .stopwatchsection .stopwatch .reset:active {
+  scale: 0.95;
+  border-color: transparent;
+  color: black;
+  background-color: #fff;
+}
+#root .stopwatchsection .stopwatch.running {
+  border-color: greenyellow;
+}
+#root .stopwatchsection .stopwatch.stopped {
+  border-color: red;
 }/*# sourceMappingURL=App.css.map */

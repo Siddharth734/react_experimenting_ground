@@ -1,16 +1,59 @@
-# React + Vite
+# React Practice App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React application for learning and experimenting with different React concepts and features.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. Todo List
+- Add new todos with the input field
+- Click on todos to mark them as complete/incomplete
+- Press any key to automatically focus the input field
+- Press Enter to quickly add a todo
 
-## React Compiler
+### 2. Color Changing Card
+- Interactive card that changes color on click
+- Automatically changes color every 10 seconds
+- Wrapped in an Error Boundary for error handling
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 3. Stopwatch
+- Simple stopwatch component
+- Start, stop, and reset functionality
 
-## Expanding the ESLint configuration
+## What I'm Learning
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **useState**: Managing component state (todos, input values, colors)
+- **useEffect**: Side effects like event listeners and intervals
+- **useRef**: DOM manipulation and focusing elements
+- **Error Boundaries**: Handling component errors gracefully
+- **Component composition**: Breaking UI into reusable components
+- **Event handling**: onClick, onChange, onKeyDown events
+- **Conditional rendering**: Dynamic className based on state
+
+## Getting Started
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Open your browser and start experimenting!
+
+## Project Structure
+
+```
+src/
+├── App.jsx                 # Main app component
+├── App.css                 # Styles
+├── components/
+│   ├── errorBoundary.jsx   # Error handling component
+│   └── Stopwatch.jsx       # Stopwatch component
+```
+
+## Notes
+
+This is a practice project where I add new sections and features as I learn new React concepts. Feel free to explore and modify!

@@ -16,11 +16,15 @@ html,body{
     border-radius: $rad;
 }
 
+@mixin scale-bc($bc: transparent){
+    scale: 0.95;
+    border-color: $bc;
+}
+
 #root{
-    height: 100%;
     width: 100%;
 
-    main{
+    .todosection{
         height: 100%;
         padding: 2rem;
         display: flex;
@@ -78,6 +82,13 @@ html,body{
             }
         }
     
+    }
+    
+    .colorsection{
+        display: flex;
+        justify-content: center;
+        padding-top: 5rem;
+
         .card{
             height: 20rem;
             padding: 2rem;
@@ -90,6 +101,54 @@ html,body{
             border-color: rgb(216, 0, 0);
             background-color: rgb(49, 49, 49);
             color: rgb(216, 0, 0);
+        }
+    }
+
+    .stopwatchsection{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding-top: 5rem;
+        
+        .stopwatch{
+            padding: 0.1rem;
+            width: 100px;
+            border: 0.1rem solid rgb(76, 76, 76);
+            @include squircle-radius(5rem);
+            text-align: center;
+            overflow: hidden;
+
+            button{
+                width: 50%;
+                background-color: rgb(49, 49, 49);
+                border: 0.1rem solid rgb(76, 76, 76);
+                padding: 0.3rem;
+                @include squircle-radius(1rem);
+            }
+            .reset{
+                width: 100%;
+                padding: 0.5;
+                border: none;
+            }
+            .start:active{
+                @include scale-bc(rgb(255, 220, 82));
+            }
+            .stop:active{
+                @include scale-bc(rgb(255, 78, 78));
+            }
+            .reset:active{
+                @include scale-bc();
+                color: black;
+                background-color: #fff;
+            }
+        }
+
+        .stopwatch.running{
+            border-color: greenyellow;
+        }
+        .stopwatch.stopped{
+            border-color: red;
         }
     }
 }

@@ -1,6 +1,7 @@
 import React,{ useEffect, useRef, useState } from 'react'
 import './App.css'
-import ErrorBoundary from './errorBoundary';
+import ErrorBoundary from './components/errorBoundary';
+import Stopwatch from './components/Stopwatch';
 
 function TODO({title, done}) {
   const [doneState, setDone] = useState(done);
@@ -57,7 +58,7 @@ function App() {
 
   return (
     <>
-      <main>
+      <section className='todosection'>
         <h1>TODOS</h1>
         <div className='addtodo'>
           <input type="text" ref={inputRef} placeholder="new todo" value={inputval} onChange={(e) => setInputval(e.target.value)} onKeyDown={(e) => {e.key === "Enter"?addTodo():""}}/>
@@ -66,10 +67,16 @@ function App() {
         <div className='todoscontainer'>
           {todos.map((todo,i) => <TODO key={i} title={todo.title} done={todo.done}></TODO>)}
         </div>
+      </section>
+      <section className='colorsection'>
         <ErrorBoundary>
           <Card1/>
         </ErrorBoundary>
-      </main>
+      </section>
+      <section className='stopwatchsection'>
+        <h1>Stopwatch</h1>
+        <Stopwatch/>
+      </section>
     </>
   )
 }
