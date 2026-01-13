@@ -14,7 +14,7 @@ html, body {
 #root {
   width: 100%;
 }
-#root .todosection {
+#root .todoSection {
   height: 100%;
   padding: 2rem;
   display: flex;
@@ -23,7 +23,7 @@ html, body {
   gap: 4rem;
   text-align: center;
 }
-#root .todosection .addtodo input {
+#root .todoSection .addtodo input {
   background-color: rgb(49, 49, 49);
   padding: 0.7rem;
   border: none;
@@ -31,7 +31,7 @@ html, body {
   border-radius: 0.5rem;
   margin-right: 1rem;
 }
-#root .todosection .addtodo button {
+#root .todoSection .addtodo button {
   background-color: rgb(21, 177, 164);
   padding: 0.5rem;
   border: none;
@@ -39,18 +39,18 @@ html, body {
   border-radius: 0.5rem;
   transition: all 0.1s ease-in-out;
 }
-#root .todosection .addtodo button:active {
+#root .todoSection .addtodo button:active {
   background-color: rgb(14, 215, 198);
   scale: 0.95;
 }
-#root .todosection .todoscontainer {
+#root .todoSection .todoscontainer {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
 }
-#root .todosection .todoscontainer .todo {
+#root .todoSection .todoscontainer .todo {
   padding: 0.7rem;
   border: 2px solid grey;
   background-color: rgb(49, 49, 49);
@@ -60,19 +60,19 @@ html, body {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-#root .todosection .todoscontainer .todo:active {
+#root .todoSection .todoscontainer .todo:active {
   transform: scale(0.95);
 }
-#root .todosection .todoscontainer .todo.done {
+#root .todoSection .todoscontainer .todo.done {
   border-color: rgb(151, 255, 113);
   background: linear-gradient(to left, lime, rgb(57, 194, 23), lime);
 }
-#root .colorsection {
+#root .colorSection {
   display: flex;
   justify-content: center;
   padding-top: 5rem;
 }
-#root .colorsection .card {
+#root .colorSection .card {
   height: 20rem;
   padding: 2rem;
   border: 2px solid grey;
@@ -81,19 +81,19 @@ html, body {
   width: 30%;
   cursor: pointer;
 }
-#root .colorsection .card.error {
+#root .colorSection .card.error {
   border-color: rgb(216, 0, 0);
   background-color: rgb(49, 49, 49);
   color: rgb(216, 0, 0);
 }
-#root .stopwatchsection {
+#root .stopwatchSection {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
   padding-top: 5rem;
 }
-#root .stopwatchsection .stopwatch {
+#root .stopwatchSection .stopwatch {
   padding: 0.1rem;
   width: 100px;
   border: 0.1rem solid rgb(76, 76, 76);
@@ -102,7 +102,7 @@ html, body {
   text-align: center;
   overflow: hidden;
 }
-#root .stopwatchsection .stopwatch button {
+#root .stopwatchSection .stopwatch button {
   width: 50%;
   background-color: rgb(49, 49, 49);
   border: 0.1rem solid rgb(76, 76, 76);
@@ -110,28 +110,86 @@ html, body {
   corner-shape: squircle;
   border-radius: 1rem;
 }
-#root .stopwatchsection .stopwatch .reset {
+#root .stopwatchSection .stopwatch .reset {
   width: 100%;
   padding: 0.5;
   border: none;
 }
-#root .stopwatchsection .stopwatch .start:active {
+#root .stopwatchSection .stopwatch .start:active {
   scale: 0.95;
   border-color: rgb(255, 220, 82);
 }
-#root .stopwatchsection .stopwatch .stop:active {
+#root .stopwatchSection .stopwatch .stop:active {
   scale: 0.95;
   border-color: rgb(255, 78, 78);
 }
-#root .stopwatchsection .stopwatch .reset:active {
+#root .stopwatchSection .stopwatch .reset:active {
   scale: 0.95;
   border-color: transparent;
   color: black;
   background-color: #fff;
 }
-#root .stopwatchsection .stopwatch.running {
+#root .stopwatchSection .stopwatch.running {
   border-color: greenyellow;
 }
-#root .stopwatchsection .stopwatch.stopped {
+#root .stopwatchSection .stopwatch.stopped {
   border-color: red;
+}
+#root .downloadSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+#root .downloadSection .box {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(49, 49, 49);
+  padding: 2.5rem 5rem;
+  corner-shape: squircle;
+  border-radius: 1rem;
+  gap: 2rem;
+  text-align: center;
+}
+#root .downloadSection .box h3 {
+  color: rgb(238, 238, 238);
+  font-weight: 100;
+}
+#root .downloadSection .box .ebar {
+  height: 1rem;
+  width: 50rem;
+  background-color: #fff;
+  corner-shape: squircle;
+  border-radius: 10rem;
+  overflow: hidden;
+}
+#root .downloadSection .box .ebar .ibar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(0.25turn, green, green, greenyellow);
+  transition: width 0.1s ease-in-out;
+}
+#root .downloadSection .box .butSec {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+#root .downloadSection .box .butSec .down-percent {
+  font-weight: 600;
+  font-size: 2rem;
+}
+#root .downloadSection .box .butSec .download-btn {
+  border: none;
+  background-color: green;
+  padding: 0.5rem;
+  corner-shape: squircle;
+  border-radius: 1rem;
+}
+#root .downloadSection .box .butSec .download-btn:hover {
+  cursor: pointer;
+}
+#root .downloadSection .box .butSec .download-btn:active {
+  scale: 0.95;
 }/*# sourceMappingURL=App.css.map */

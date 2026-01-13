@@ -15,6 +15,7 @@ export default function Stopwatch() {
     }
 
     function StopTimer() {
+        if(!timerID.current) return;
         setBorderC('stopwatch stopped');
         clearInterval(timerID.current);
         timerID.current=null;

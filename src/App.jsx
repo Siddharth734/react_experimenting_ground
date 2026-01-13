@@ -2,6 +2,7 @@ import React,{ useEffect, useRef, useState } from 'react'
 import './App.css'
 import ErrorBoundary from './components/errorBoundary';
 import Stopwatch from './components/Stopwatch';
+import DownloadBar from './components/DownloadBar';
 
 function TODO({title, done}) {
   const [doneState, setDone] = useState(done);
@@ -58,7 +59,7 @@ function App() {
 
   return (
     <>
-      <section className='todosection'>
+      <section className='todoSection'>
         <h1>TODOS</h1>
         <div className='addtodo'>
           <input type="text" ref={inputRef} placeholder="new todo" value={inputval} onChange={(e) => setInputval(e.target.value)} onKeyDown={(e) => {e.key === "Enter"?addTodo():""}}/>
@@ -68,14 +69,17 @@ function App() {
           {todos.map((todo,i) => <TODO key={i} title={todo.title} done={todo.done}></TODO>)}
         </div>
       </section>
-      <section className='colorsection'>
+      <section className='colorSection'>
         <ErrorBoundary>
           <Card1/>
         </ErrorBoundary>
       </section>
-      <section className='stopwatchsection'>
+      <section className='stopwatchSection'>
         <h1>Stopwatch</h1>
         <Stopwatch/>
+      </section>
+      <section className='downloadSection'>
+        <DownloadBar/>
       </section>
     </>
   )
