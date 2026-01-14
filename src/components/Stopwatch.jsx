@@ -37,5 +37,5 @@ export default function Stopwatch() {
             </div>
             <button className='reset' onClick={ResetTimer}>Reset</button>
         </div>
-    )
+    );
 }

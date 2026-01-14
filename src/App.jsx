@@ -3,6 +3,7 @@ import './App.css'
 import ErrorBoundary from './components/errorBoundary';
 import Stopwatch from './components/Stopwatch';
 import DownloadBar from './components/DownloadBar';
+import LikeCard from './components/instaLikeCard';
 
 function TODO({title, done}) {
   const [doneState, setDone] = useState(done);
@@ -80,6 +81,9 @@ function App() {
       </section>
       <section className='downloadSection'>
         <DownloadBar/>
+      </section>
+      <section className='likeSection'>
+        <LikeCard/>
       </section>
     </>
   )

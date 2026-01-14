@@ -4,18 +4,21 @@ export default function DownloadBar() {
     const [progress, setProgress] = useState(0);
     const [dText, setDText] = useState("Download");
     const isComplete = progress === 100;
+    let num = 50+Math.floor(Math.random()*50);
+    let num2 = num*100;
 
     function IncProgress() {
         if(dText==="Download") setDText("Downloading...");
+        else if(dText==="Downloading...") return;
         const interval = setInterval(() => {
             setProgress(p=>p+1);
-        },100);
+        },num);
         
         setTimeout(() => {
             clearInterval(interval);
             setDText("Downloaded");
 
-        },10000);
+        },num2);
     }
 
     return(
