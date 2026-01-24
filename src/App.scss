@@ -233,7 +233,7 @@ html,body{
             overflow: hidden;
             @include squircle-radius(2rem);
             text-align: center;
-            gap: 2rem;
+            gap: 1rem;
 
             .innercard{
                 width: 100%;
@@ -258,7 +258,7 @@ html,body{
                     color: transparent;
                     opacity: 0;
                     transform: translate(-50%,-50%) scale(0) rotate(60deg);
-                    transition: all  0.3s;
+                    transition: all ease 0.3s;
                 }
             }
 
@@ -270,5 +270,26 @@ html,body{
             }
         }
 
+    }
+
+    .diffBoxSection{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        .diffbox{
+            background-color: rgb(49, 49, 49);
+            border: 0.01rem solid rgb(76, 76, 76);
+            height: 30rem;
+            width: 80%;
+            margin-bottom: 5rem;
+            position: relative;
+            @include squircle-radius(1rem);
+
+            #cursor{
+                position: absolute;
+            }
+        }
     }
 }

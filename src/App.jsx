@@ -4,6 +4,7 @@ import ErrorBoundary from './components/errorBoundary';
 import Stopwatch from './components/Stopwatch';
 import DownloadBar from './components/DownloadBar';
 import LikeCard from './components/instaLikeCard';
+import DiffBox from './components/DiffBox';
 
 function TODO({title, done}) {
   const [doneState, setDone] = useState(done);
@@ -84,6 +85,10 @@ function App() {
       </section>
       <section className='likeSection'>
         <LikeCard/>
+      </section>
+      <section className='diffBoxSection'>
+        <h2>Place Your Cursor inside the box</h2>
+        <DiffBox/>
       </section>
     </>
   )

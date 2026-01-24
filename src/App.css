@@ -210,7 +210,7 @@ html, body {
   corner-shape: squircle;
   border-radius: 2rem;
   text-align: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 #root .likeSection .card .innercard {
   width: 100%;
@@ -236,8 +236,27 @@ html, body {
   color: transparent;
   opacity: 0;
   transform: translate(-50%, -50%) scale(0) rotate(60deg);
-  transition: all 0.3s;
+  transition: all ease 0.3s;
 }
 #root .likeSection .card .txt h1 {
   color: palevioletred;
+}
+#root .diffBoxSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+#root .diffBoxSection .diffbox {
+  background-color: rgb(49, 49, 49);
+  border: 0.01rem solid rgb(76, 76, 76);
+  height: 30rem;
+  width: 80%;
+  margin-bottom: 5rem;
+  position: relative;
+  corner-shape: squircle;
+  border-radius: 1rem;
+}
+#root .diffBoxSection .diffbox #cursor {
+  position: absolute;
 }/*# sourceMappingURL=App.css.map */
