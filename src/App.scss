@@ -287,11 +287,19 @@ html,body{
             position: relative;
             @include squircle-radius(1rem);
             cursor: none;
+            
+            .inner-diffbox{
+                height: 100%;
+                width: 100%;
+                @include squircle-radius(1rem);
 
-            #cursor{
-                height: 3rem;
-                position: absolute;
-                transform: translate(-50%, -50%);
+                #cursor{
+                    height: 3rem;
+                    position: absolute;
+                    transform: translate(-50%, -50%) scaleX(-1);
+                    -webkit-user-drag: none;
+                    pointer-events: none;
+                }
             }
         }
     }

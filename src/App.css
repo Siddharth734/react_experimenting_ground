@@ -258,8 +258,16 @@ html, body {
   border-radius: 1rem;
   cursor: none;
 }
-#root .diffBoxSection .diffbox #cursor {
+#root .diffBoxSection .diffbox .inner-diffbox {
+  height: 100%;
+  width: 100%;
+  corner-shape: squircle;
+  border-radius: 1rem;
+}
+#root .diffBoxSection .diffbox .inner-diffbox #cursor {
   height: 3rem;
   position: absolute;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scaleX(-1);
+  -webkit-user-drag: none;
+  pointer-events: none;
 }/*# sourceMappingURL=App.css.map */
