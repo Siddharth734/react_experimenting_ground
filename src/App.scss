@@ -286,9 +286,12 @@ html,body{
             margin-bottom: 5rem;
             position: relative;
             @include squircle-radius(1rem);
+            cursor: none;
 
             #cursor{
+                height: 3rem;
                 position: absolute;
+                transform: translate(-50%, -50%);
             }
         }
     }

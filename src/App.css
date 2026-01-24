@@ -256,7 +256,10 @@ html, body {
   position: relative;
   corner-shape: squircle;
   border-radius: 1rem;
+  cursor: none;
 }
 #root .diffBoxSection .diffbox #cursor {
+  height: 3rem;
   position: absolute;
+  transform: translate(-50%, -50%);
 }/*# sourceMappingURL=App.css.map */
