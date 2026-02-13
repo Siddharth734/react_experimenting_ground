@@ -5,6 +5,7 @@ import Stopwatch from './components/Stopwatch';
 import DownloadBar from './components/DownloadBar';
 import LikeCard from './components/instaLikeCard';
 import DiffBox from './components/DiffBox';
+import Spotlight from './components/Spotlight';
 
 function TODO({title, done}) {
   const [doneState, setDone] = useState(done);
@@ -89,6 +90,10 @@ function App() {
       <section className='diffBoxSection'>
         <h2>Place Your Cursor inside the box</h2>
         <DiffBox/>
+      </section>
+      <section className="spotlightSection">
+        <h2>Find the treasure</h2>
+        <Spotlight/>
       </section>
     </>
   )
