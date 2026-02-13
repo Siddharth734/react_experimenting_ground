@@ -92,7 +92,7 @@ function App() {
         <DiffBox/>
       </section>
       <section className="spotlightSection">
-        <h2>Find the treasure</h2>
+        {/* <h2>Find the treasure</h2> */}
         <Spotlight/>
       </section>
     </>
