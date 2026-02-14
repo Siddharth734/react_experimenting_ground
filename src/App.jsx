@@ -6,6 +6,7 @@ import DownloadBar from './components/DownloadBar';
 import LikeCard from './components/instaLikeCard';
 import DiffBox from './components/DiffBox';
 import Spotlight from './components/Spotlight';
+import HackText from './components/HackText';
 
 function TODO({title, done}) {
   const [doneState, setDone] = useState(done);
@@ -92,8 +93,10 @@ function App() {
         <DiffBox/>
       </section>
       <section className="spotlightSection">
-        {/* <h2>Find the treasure</h2> */}
         <Spotlight/>
+      </section>
+      <section className="hacktextSection">
+        <HackText/>
       </section>
     </>
   )
