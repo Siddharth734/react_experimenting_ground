@@ -359,19 +359,21 @@ html,body{
             text-align: center;
             
             div{
+                width: 50rem;
                 background-color: rgb(49, 49, 49);
                 padding: 1rem;
                 @include squircle-radius(1rem);
                 border: 0.06rem solid rgb(76, 76, 76);
-                width: 50rem;
 
                 h1{
+                    width: 100%;
                     background: linear-gradient(to right, green, lawngreen);
                     background-position: center;
                     background-clip: text;
                     -webkit-background-clip: text;
                     color: transparent;
                     font-weight: 500;
+                    font-family: 'Courier New', monospace;
                 }
             }
 

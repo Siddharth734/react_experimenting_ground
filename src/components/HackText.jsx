@@ -1,9 +1,10 @@
 import { useRef, useState } from 'react';
 
 export default function HackText() {
-    const chars = '$#@!^%&*()_+{}|:"<>?~`-=][\;/.,*&^%$#@!';
+    const symbols = '$#@!^%&*()_+{}|:"<>?~`-=][\;/.,*&^%$#@!';
     const OGtxt = 'You are Hacked, now we own the console';
-    const [hackTxt,setHackTxt] = useState(OGtxt);
+    const Rtxt = "Hello user, Greeting on your arrival";
+    const [hackTxt,setHackTxt] = useState(Rtxt);
     const txtRef = useRef(null);
 
     let iteration = 0;
@@ -11,21 +12,22 @@ export default function HackText() {
     function txtEntry(){
         if(txtRef.current) return;
         txtRef.current = setInterval(() => {
+            // map is used bcs it returns an array
             const newTxt = OGtxt.split('').map((char, index) => {
                 if(index < iteration)
                     return char;
-                return chars.split('')[Math.floor(Math.random()*chars.length)];
+                return symbols.split('')[Math.floor(Math.random()*symbols.length)];
             }).join('');
             iteration += 0.2;
             
             setHackTxt(newTxt);
-        },10)
+        },30)
     }
 
     function txtLeave() {
         clearInterval(txtRef.current);
         txtRef.current = null;
-        setHackTxt(OGtxt);
+        setHackTxt(Rtxt);
     }
     
     return (
