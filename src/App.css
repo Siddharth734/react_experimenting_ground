@@ -337,4 +337,80 @@ html, body {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.292);
   border-color: rgba(126, 252, 0, 0.263);
+}
+#root .windowSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5rem;
+}
+#root .windowSection .view {
+  position: relative;
+  height: 40rem;
+  width: 100%;
+  border: 0.01rem solid rgb(76, 76, 76);
+  corner-shape: squircle;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+#root .windowSection .view .top {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+#root .windowSection .view .top img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 20% 80%;
+     object-position: 20% 80%;
+}
+#root .windowSection .view .top .window1 {
+  background-color: rgb(49, 49, 49);
+  border: 0.01rem solid rgb(76, 76, 76);
+  position: absolute;
+  bottom: 8%;
+  transition: all 0.2s linear;
+  margin-bottom: 0.7rem;
+  corner-shape: squircle;
+  border-radius: 0.5rem;
+  scale: 0.5;
+}
+#root .windowSection .view .bottom {
+  height: 8%;
+  width: 100%;
+  border-top: 0.01rem solid rgb(76, 76, 76);
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+#root .windowSection .view .bottom i:first-child {
+  color: deepskyblue;
+}
+#root .windowSection .view .bottom i:nth-child(2) {
+  color: rgb(7, 191, 7);
+}
+#root .windowSection .view .bottom i:nth-child(3) {
+  color: cornflowerblue;
+}
+#root .windowSection .view .bottom i {
+  font-size: 2rem;
+  z-index: 1;
+  padding: 0.6rem;
+}
+#root .windowSection .view .bottom i:hover {
+  corner-shape: squircle;
+  border-radius: 1rem;
+  background-color: rgba(127, 127, 127, 0.5);
+}
+#root .windowSection .view .bottom::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(49, 49, 49, 0.5);
+  filter: blur(0.1rem) saturate(180%);
+  z-index: 0;
 }/*# sourceMappingURL=App.css.map */

@@ -385,4 +385,85 @@ html,body{
             }
         }
     }
+
+    .windowSection{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 5rem;
+        
+        .view{
+            position: relative;
+            height: 40rem;
+            width: 100%;
+            border: 0.01rem solid rgb(76, 76, 76);
+            @include squircle-radius(1rem);
+            overflow: hidden;
+
+            .top{
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: 20% 80%;
+                }
+
+                .window1{
+                    // height: 0rem;
+                    // width: 0rem;
+                    background-color: rgb(49, 49, 49);
+                    border: 0.01rem solid rgb(76, 76, 76);
+                    position: absolute;
+                    bottom: 8%;
+                    transition: all 0.2s linear;
+                    margin-bottom: 0.7rem;
+                    @include squircle-radius();
+                    scale: 0.5;
+                }
+            }
+
+            .bottom{
+                height: 8%;
+                width: 100%;
+                border-top: 0.01rem solid rgb(76, 76, 76);
+                position: absolute;
+                bottom: 0;
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+
+                i:first-child{
+                    color: deepskyblue;
+                }
+                i:nth-child(2){
+                    color: rgb(7, 191, 7);
+                }
+                i:nth-child(3){
+                    color: cornflowerblue;
+                }
+                i{
+                    font-size: 2rem;
+                    z-index: 1;
+                    padding: 0.6rem;
+                }
+                i:hover{
+                    @include squircle-radius(1rem);
+                    background-color: rgba(127, 127, 127, 0.5);
+                }
+            }
+
+            .bottom::before{
+                content: '';
+                position: absolute;
+                inset: 0; //covers full .bottom area
+                background-color: rgb(49, 49, 49,0.5);
+                filter: blur(0.1rem) saturate(180%);
+                z-index: 0;
+            }   
+        }
+    }
 }

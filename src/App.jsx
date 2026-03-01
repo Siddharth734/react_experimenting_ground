@@ -7,6 +7,7 @@ import LikeCard from './components/instaLikeCard';
 import DiffBox from './components/DiffBox';
 import Spotlight from './components/Spotlight';
 import HackText from './components/HackText';
+import Window from './components/Window';
 
 function TODO({title, done}) {
   const [doneState, setDone] = useState(done);
@@ -97,6 +98,9 @@ function App() {
       </section>
       <section className="hacktextSection">
         <HackText/>
+      </section>
+      <section className="windowSection">
+        <Window/>
       </section>
     </>
   )
