@@ -424,6 +424,25 @@ html,body{
                     @include squircle-radius();
                     scale: 0.5;
                 }
+
+                .box{
+                    position: absolute;
+                    height: 2rem;
+                    width: 2rem;
+                    background-color: transparent;
+                    border: 0.01rem solid rgb(76, 76, 76);
+                    transition: all 0.2s linear;
+                    @include squircle-radius();
+                }
+                .box::before{
+                    content: "";
+                    inset: 0;
+                    position: absolute;
+                    background-color: rgba(49, 49, 49 , 0.5);
+                    filter: blur(0.1rem) saturate(180%);
+                    z-index: 0;
+                    // @include squircle-radius();
+                }
             }
 
             .bottom{

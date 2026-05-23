@@ -377,6 +377,24 @@ html, body {
   border-radius: 0.5rem;
   scale: 0.5;
 }
+#root .windowSection .view .top .box {
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  background-color: transparent;
+  border: 0.01rem solid rgb(76, 76, 76);
+  transition: all 0.2s linear;
+  corner-shape: squircle;
+  border-radius: 0.5rem;
+}
+#root .windowSection .view .top .box::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+  background-color: rgba(49, 49, 49, 0.5);
+  filter: blur(0.1rem) saturate(180%);
+  z-index: 0;
+}
 #root .windowSection .view .bottom {
   height: 8%;
   width: 100%;
